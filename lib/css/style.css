@@ -1,0 +1,110 @@
+body {
+    background-color:#e1e7f2;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Montserrat', sans-serif;
+    /* font: normal 14px Roboto,arial,sans-serif;*/
+}
+
+.removeTopMargin {
+    margin-top: 0 !important;
+}
+
+.largeText {
+    font-size: 54px;
+    font-weight: 700;
+}
+
+.titleLogin {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.labelStyle {
+    color: #3a5177;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.container {
+    width: 100%;
+    margin-top:40px;
+    padding: 25px;
+    position: fixed;
+}
+
+.form-login {
+    background-color: #EDEDED;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow:0 1px 0 #cfcfcf;
+}
+
+h4 { 
+    border:0 solid #3a5177; 
+    border-bottom-width:1px;
+    padding-bottom:10px;
+    text-align: center;
+}
+
+.space {
+    margin-bottom: 30px;
+}
+
+.panel-heading {
+    padding: 5px 15px;
+}
+
+.panel-footer {
+    padding: 1px 15px;
+    color: #A0A0A0;
+}
+
+.profile-img {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+/*********************Media screen*************/
+/*********************Media screen*************/
+/*********************Media screen*************/
+
+@media screen and (max-width: 768px) {
+    .largeText {
+        font-size: 30px;
+    }
+    
+    .panel-primary {    
+        width: 100% !important;       
+    }
+    
+    /*img.logo {
+        background-image: url("http://undercontractorapp.consultech.rs/lib/images/ucapp-logo-mobile.png") !important;
+    }*/
+    
+}
+
+@media screen and (max-width: 992px) {
+    .panel-primary {    
+        width: 60%;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .inputLogin {
+        max-width: 60%;
+    }
+}
