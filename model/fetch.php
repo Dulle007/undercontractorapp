@@ -1,19 +1,23 @@
 <?php
-	session_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-	$conn = new mysqli("mysql687.loopia.se", "uclogindb@c44997", "undrc%ldb_^01#", "consultech_rs_db_14");
-        $conn->query("SET NAMES 'utf8' COLLATE 'utf8_unicode_ci'");
-        
-	$output = array();
-	//$sql = "SELECT * FROM UserSecurity WHERE ID = '".$_SESSION['user']."'";
-        $sql = "SELECT C.Name, US.UserID, US.Username, US.Password "
-                    . "FROM UserSecurity US "
-                                        . "INNER JOIN User U ON US.UserID=U.ID "
-                                        . "INNER JOIN Company C ON U.CompanyID=C.ID "
-                    . "WHERE US.ID='".$_SESSION['user']."'";
-	$query=$conn->query($sql);
-	while($row=$query->fetch_array()){
-		$output[] = $row;
-	}
+session_start();
+require 'rb/rb.php';
+R::setup('mysql:host=mysql687.loopia.se;dbname=consultech_rs_db_12', 'test@c44510', 'probna_sifra_1'); //for both mysql or mariaDBR
 
-	echo json_encode($output);
+if (!R::testConnection()) {
+    exit('Error connection!');
+}
+//$conn->query("SET NAMES 'utf8' COLLATE 'utf8_unicode_ci'");
+
+
+//$sql = "SELECT * FROM UserSecurity WHERE ID = '".$_SESSION['user']."'";
+$result = R::getAll("SELECT C.name, US.user_id, US.user_name, US.password "
+                . "FROM user_security US "
+                . "INNER JOIN user U ON US.user_id=U.id "
+                . "INNER JOIN company C ON U.company_id=C.id "
+                . "WHERE US.id='" . $_SESSION['usr'] . "'");
+
+echo json_encode($result);

@@ -9,7 +9,7 @@ app.controller('homeCtrl', ['$scope', 'loginService', function($scope, loginServ
 	//fetch login user
 	var userrequest = loginService.fetchuser();
 	userrequest.then(function(response){
-		$scope.user = response.data[0];
+		$scope.usr = response.data[0];
 	});
 
 }]);

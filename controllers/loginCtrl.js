@@ -3,8 +3,8 @@
 app.controller('loginCtrl', function($scope, loginService){
 	$scope.errorLogin = false;
 	
-	$scope.login = function(user){
-		loginService.login(user, $scope);
+	$scope.login = function(usr){
+		loginService.login(usr, $scope);
 	}
 
 	$scope.clearMsg = function(){

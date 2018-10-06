@@ -12,7 +12,7 @@
                             <span class="input-group-addon">
                                 <i class="glyphicon glyphicon-user"></i>
                             </span> 
-                            <input class="form-control" placeholder="Username" type="text" autofocus ng-model="user.username" required>
+                            <input class="form-control" placeholder="Username" type="text" autofocus ng-model="usr.username" required>
                         </div>                       
                     </div>
                     <div class="form-group">
@@ -20,10 +20,10 @@
                             <span class="input-group-addon">
                                 <i class="glyphicon glyphicon-lock"></i>
                             </span>
-                            <input class="form-control" placeholder="Password" type="password" ng-model="user.password" required>
+                            <input class="form-control" placeholder="Password" type="password" ng-model="usr.password" required>
                         </div>                        
                     </div>
-                    <button type="button" id="loginbutton" class="btn btn-lg btn-primary btn-block" ng-disabled="logform.$invalid" ng-click="login(user)"><span class="glyphicon glyphicon-log-in"></span> <span id="logtext">Login</span></button>
+                    <button type="button" id="loginbutton" class="btn btn-lg btn-primary btn-block" ng-disabled="logform.$invalid" ng-click="login(usr)"><span class="glyphicon glyphicon-log-in"></span> <span id="logtext">Login</span></button>
                 </fieldset>
             </form>
         </div>

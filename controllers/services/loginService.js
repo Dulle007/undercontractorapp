@@ -2,12 +2,12 @@
 
 app.factory('loginService', function($http, $location, sessionService){
 	return{
-		login: function(user, $scope){
-			var validate = $http.post('model/login.php', user);
+		login: function(usr, $scope){
+			var validate = $http.post('model/login.php', usr);
 			validate.then(function(response){
-				var uid = response.data.user;
+				var uid = response.data.usr;
 				if(uid){
-					sessionService.set('user',uid);
+					sessionService.set('usr',uid);
 					$location.path('/home');
 				}
 				
@@ -19,7 +19,7 @@ app.factory('loginService', function($http, $location, sessionService){
 			});
 		},
 		logout: function(){
-			sessionService.destroy('user');
+			sessionService.destroy('usr');
 			$location.path('/');
 		},
 		islogged: function(){
@@ -27,8 +27,8 @@ app.factory('loginService', function($http, $location, sessionService){
 			return checkSession;
 		},
 		fetchuser: function(){
-			var user = $http.get('model/fetch.php');
-			return user;
+			var usr = $http.get('model/fetch.php');
+			return usr;
 		}
 	};
 });

@@ -2,11 +2,11 @@
     <div class="col-md-4 col-md-offset-4">
         <h2 class="text-center labelStyle">Welcome to Homepage </h2>
         <h3 class="text-center labelStyle space">User Info:</h3>
-        <h4 class="labelStyle text-left">Company name: {{ user.Name }}</h4>
-        <!-- <h4 class="labelStyle text-left">Database name: {{ user.Name }}</h4> -->
-        <h4 class="labelStyle text-left">UserID: {{ user.UserID}}</h4>		
-        <h4 class="labelStyle text-left">Username: {{ user.Username}}</h4>
-        <h4 class="labelStyle text-left">Password: {{ user.Password}}</h4>
+        <h4 class="labelStyle text-left">Company name: {{ usr.name }}</h4>
+        <!-- <h4 class="labelStyle text-left">Database name: {{ usr.name }}</h4> -->
+        <h4 class="labelStyle text-left">UserID: {{ usr.user_id}}</h4>		
+        <h4 class="labelStyle text-left">Username: {{ usr.user_name}}</h4>
+        <h4 class="labelStyle text-left">Password: {{ usr.password}}</h4>
         <a href="" class="btn btn-danger" ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
     </div>
 </div>

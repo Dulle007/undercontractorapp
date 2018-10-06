@@ -1,34 +1,33 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 session_start();
 	
-$conn = new mysqli("mysql687.loopia.se", "uclogindb@c44997", "undrc%ldb_^01#", "consultech_rs_db_14");
+require 'rb/rb.php';
+R::setup('mysql:host=mysql687.loopia.se;dbname=consultech_rs_db_12', 'test@c44510', 'probna_sifra_1'); //for both mysql or mariaDBR
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if (!R::testConnection()) {
+    exit('Error connection!');
 }
 
 $out = array('error' => false);
 
-$user = json_decode(file_get_contents('php://input'));
+$usr = json_decode(file_get_contents('php://input'));
 
-$username = $user->username;
-$password = $user->password;
+$username = $usr->username;
+$password = $usr->password;
 
-$sql = "SELECT * FROM UserSecurity WHERE Username='$username' AND Password='$password'";
-$query = $conn->query($sql);
+//$sql = "SELECT * FROM user_security WHERE user_name='$username' AND password='$password'";
+$result = R::getAll("SELECT * FROM user_security WHERE user_name=? AND password=?", array( $username, $password));
 
-if($query->num_rows>0){
-	$row = $query->fetch_array();
-	$out['message'] = 'Login Successful';
-	$out['user'] = uniqid('ang_');
-	$_SESSION['user'] = $row['ID'];
+if (!empty($result)) {
+    $out['message'] = 'Login Successful';
+    $out['usr'] = uniqid('ang_');
+    $_SESSION['usr'] = $result[0]["id"];
+} else {
+    $out['error'] = true;
+    $out['message'] = 'Invalid Login!!!';
 }
-else{
-	$out['error'] = true;
-	$out['message'] = 'Invalid Login!!!';
-}
-
 echo json_encode($out);
-
-?>
