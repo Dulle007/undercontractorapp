@@ -5,6 +5,12 @@ body {
     /* font: normal 14px Roboto,arial,sans-serif;*/
 }
 
+.illustration img {
+    width: 100%;
+    display: block;
+    max-width: 250px;
+}
+
 .removeTopMargin {
     margin-top: 0 !important;
 }
@@ -76,31 +82,93 @@ h4 {
     -webkit-border-radius: 50%;
     border-radius: 50%;
 }
+
+.topHeaderMargin {
+    position: relative;
+    top: -320px;
+}
+
+.rowHeader {
+    margin-top: 40px;
+    background-color: transparent;
+}
+
+.labelHeaderPosition {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.usernameHeader {
+    padding-right: 10px;
+    font-size: 14px;
+}
+
+.btnInvoice {
+    margin-top: 100px;
+}
 /*********************Media screen*************/
 /*********************Media screen*************/
 /*********************Media screen*************/
 
-@media screen and (max-width: 768px) {
-    .largeText {
-        font-size: 30px;
+@media screen and (max-width: 768px) {        
+
+    .illustration img {
+        width: 100%;
+        display: block;
+        max-width: 120px;
+    }        
+
+    .btn {
+        padding: 1px 2px;
+        font-size: 11px;
     }
-    
+
+    .labelHeaderPosition {
+        margin-top: 10px;
+        font-size: 11px;
+    }
+
+    .largeText {
+        font-size: 24px;
+    }
+
     .panel-primary {    
         width: 100% !important;       
     }
-    
-    /*img.logo {
-        background-image: url("http://undercontractorapp.consultech.rs/lib/images/ucapp-logo-mobile.png") !important;
-    }*/
-    
+
+    .topHeaderMargin {
+        position: relative;
+        top: -205px;
+    }
+
+    .btnHeaderPosition {
+        position: relative;
+        right: -40px;
+    }
+
 }
 
 @media screen and (max-width: 992px) {
+
+    .rowHeader {
+        margin-top: 0px;
+        background-color: transparent;
+    }
+
     .panel-primary {    
         width: 60%;
         display: block;
         margin: 0 auto;
     }
+    .labelHeaderPosition {
+        margin-top: 5px;
+        font-size: 11px;
+    }  
+
+    .usernameHeader {        
+        font-size: 11px;
+    }
+
 }
 
 @media screen and (max-width: 1200px) {

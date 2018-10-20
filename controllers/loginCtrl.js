@@ -5,9 +5,9 @@ app.controller('loginCtrl', function($scope, loginService){
 	
 	$scope.login = function(usr){
 		loginService.login(usr, $scope);
-	}
+	};
 
 	$scope.clearMsg = function(){
 		$scope.errorLogin = false;
-	}
+	};
 });
